@@ -1,0 +1,17 @@
+.p-main{
+    display: grid;
+    grid-template-areas: "appBar appBar appBar"
+                            "nav main main"
+                            ;
+    
+    &__appBar{
+        grid-area: appBar;
+    }
+
+    &__navigationDrawer{
+        grid-area: nav;
+    }
+    &__main{
+        grid-area: main;
+    }
+}

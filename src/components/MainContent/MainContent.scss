@@ -6,41 +6,15 @@
     width: calc(100vw - 12rem);
     background-color: #F5F6F8;
 
-    &__table{
+    &__chart{
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         width: 80%;
-        padding: 1rem;
-    }
-
-    &__table > table{
-        text-align: center;
+        padding: 2rem;
         border-radius: 18px;
-        background-color: white;
-        border-collapse: collapse;
-        width: 100%;
-        padding: 1rem;
-        overflow: hidden;
-    }
-    &__table--head > tr{
-        border-radius: 14px;
-        background-color: #ebebeb;
-        height: 2rem;
-        
-    }
-    &__table--body tr:nth-child(even){
-        background-color: rgba(245, 245, 245, 0.507);
-    }
-    &__table--data{
-padding: 0.4rem 0px;  
-border-bottom: rgba(236, 236, 236, 0.5) 1px solid;  }
-    &__table--data--hours{
-        font-size: 0.8rem;
-    }
-    &__table--footer{
-        border-top: solid gray 1px;
-    }
+        background-color: white;    }
 
     &__prices-container{
         width: 45%;

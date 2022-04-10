@@ -1,5 +1,7 @@
 import React from 'react'
 import './MainContent.scss'
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS } from 'chart.js/auto'
 
 
 export default function MainContent(props) {
@@ -78,36 +80,14 @@ export default function MainContent(props) {
                         </div>
                     </div>
              </div>
-             <div className="c-mainContent__table">
-             <table>
-                <thead className="c-mainContent__table--head">
-                <tr>
-                    <th>Hora</th>
-                    <th>Precio</th>
-                </tr>
-                </thead>
-                <tbody className="c-mainContent__table--body">
-                    
-                        {prices.map((el,index)=>
-                        <tr>
-                            <td className="c-mainContent__table--data hours">{horas[index]}</td>
-                            <td className="c-mainContent__table--data">{el}€/MWh</td>
-                        </tr>
-                            
-                        )}
+             <div className="c-mainContent__chart">
+                <Line data={{
+                    labels:horas,
+                    datasets:[{label:'precio',data:prices,backgroundColor:'red',borderColor:'red'}]
+                }}
+                />
 
-                </tbody>
-                <tfoot className="c-mainContent__table--footer">
-                    <tr>
-                        <th colSpan="25">
-                            Media
-                        </th>
-                    </tr>
-                    <tr>
-            <td colSpan="25">{media}€/MWh</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <p>Precio Medio <br/> {media}</p>
             </div>
              <div className="c-mainContent__prices-container">
              <div className="c-mainContent__prices">
